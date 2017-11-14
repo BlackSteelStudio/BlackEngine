@@ -13,6 +13,9 @@
     <Filter Include="Source\Engine\Modules">
       <UniqueIdentifier>{2720ae30-412c-4d57-8895-23577a5bc241}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{80380bbc-24d0-421f-9146-b4ea47a839f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\engineConfig.ini">
@@ -32,6 +35,9 @@
     <ClCompile Include="Source\Engine\Modules\Render.cpp">
       <Filter>Source\Engine\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\GameInstance.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Engine\Engine.h">
@@ -42,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="Source\Engine\Modules\Render.h">
       <Filter>Source\Engine\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameInstance.h">
+      <Filter>Source\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ Engine::Engine()
 
 	
 	
-	// disable active window (multiThread)
+	// active le multiThread
 	window->setActive(false);
 }
 
@@ -38,13 +38,16 @@ bool Engine::isOpen()
 }
 
 
-void Engine::launch(void (*function)(Engine*))
+
+void Engine::launch(void (* instance)(Engine*))
 {
 	// Initialisation de l'engine
 	render->th_launch();
 	
 	// Start l'instance du jeu
-	thread gameInstance(function, this);
+	gameInstance = new thread(instance, this);
+	gameInstance->detach();
+
 	
 	// Boucle de l'engine
 	while (window->isOpen())
@@ -58,8 +61,5 @@ void Engine::launch(void (*function)(Engine*))
 		}
 
 	}
-
-	// Termine l'instance
-	gameInstance.join();
 }
 

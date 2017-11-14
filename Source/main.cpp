@@ -1,25 +1,11 @@
 #include "Engine\Engine.h"
-
-#include <iostream>
-
-void game(Engine* pEngine)
-{
-
-	while (pEngine->isOpen())
-	{
-
-		std::cout << "Test" << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(4));
-	}
-
-}
-
+#include "Game\GameInstance.h"
 
 
 int main()
 {
-	Engine test;
-	test.launch(&game);
+	Engine engine;
+	engine.launch(&game);
 
 	return 0;
 }

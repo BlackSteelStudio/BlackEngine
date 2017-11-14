@@ -1,15 +1,15 @@
 #pragma once
 
+#ifndef ENGINE_H
+#define ENGINE_H
+
 #include "Modules\Render.h"
 #include "Modules\Function_system.h"
 
 #include <SFML\System.hpp>
 #include <SFML\Graphics.hpp>
 
-#include <Windows.h>
 #include <thread>
-#include <iostream>
-
 using namespace std;
 
 class Engine
@@ -18,7 +18,7 @@ class Engine
 		Engine();
 		~Engine();
 
-		void launch(void(*function)(Engine*));
+		void launch(void(* instance)(Engine*));
 
 		ConfigLoader* getConfig();
 		Rendering* getRenderModule();
@@ -29,10 +29,14 @@ class Engine
 
 		sf::RenderWindow *window;
 
+		// GameInstance
+		thread* gameInstance;
+
 		// load .ini files
 		ConfigLoader config;
-
 		// Modules Principaux
 		Rendering *render;
 };
+
+#endif
 

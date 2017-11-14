@@ -1,12 +1,13 @@
 #pragma once
+#ifndef FUNCTION_SYSTEM_H
+#define FUNCTION_SYSTEM_H
+
+#include <SFML\Graphics.hpp>
 
 #include <Windows.h>
 #include <string>
 #include <iostream>
-
 using namespace std;
-
-#include <SFML\Graphics.hpp>
 
 
 struct ConfigLoader
@@ -17,3 +18,5 @@ struct ConfigLoader
 	sf::Vector2i screenSize;
 
 };
+
+#endif
