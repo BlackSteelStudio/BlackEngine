@@ -13,9 +13,9 @@ void game(Engine *pEngine)
 
 	// Affiche un cercle
 	
-	std::vector<sf::CircleShape> shape(100000);
+	std::vector<sf::CircleShape> shape(10000);
 
-	for(int i=0;i<100000;i++)
+	for(int i=0;i<10000;i++)
 	{
 		shape[i].setRadius(5);
 		shape[i].setPosition(float(rand() % loader->screenSize.x), float(rand() % loader->screenSize.y));
@@ -27,8 +27,9 @@ void game(Engine *pEngine)
 
 	while (pEngine->isOpen())
 	{
+		Sleep(6);
 
-		for (int i = 0; i<100000; i++)
+		for (int i = 0; i<10000; i++)
 		{
 			shape[i].move(float(rand() % 2), float(rand() % 2));
 		}
